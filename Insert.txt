@@ -1,0 +1,6 @@
+
+USING PERIODIC COMMIT 1000
+LOAD CSV WITH HEADERS FROM "file:///gplus_final.csv" AS gp
+MERGE (a:Person { ID: gp.Source})
+MERGE (b:Person { ID: gp.Destination })
+MERGE (a)-[:KNOWS]->(b);
